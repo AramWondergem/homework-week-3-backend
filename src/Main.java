@@ -9,10 +9,12 @@ public class Main {
         boolean continueTranslating = true;
         List<Integer> numberList = new ArrayList<>();
 
+        //filling the numberlist
         for (Integer i = 0; i < 10; i++) {
             numberList.add(i);
         }
 
+        //filling the alfabeticlist
         String[] alfabeticNumber = {"nul", "een", "twee", "drie", "vier", "vijf", "zes", "zeven", "acht", "negen"};
 
         Translator translator = new Translator(numberList, alfabeticNumber);
@@ -24,6 +26,7 @@ public class Main {
                 try {
                     placeHolderUserInput = userInput.nextInt();
 
+                    //checking if input is between 0 and 10
                     if (0 <= (int) placeHolderUserInput && 10 > placeHolderUserInput) {
                         correctAnswer = true;
                     } else {
@@ -40,6 +43,7 @@ public class Main {
 
             System.out.println(placeHolderUserInput + " kan je uitschrijven en dat ziet het er zo uit: " + translator.translate(placeHolderUserInput));
 
+            //asking if user want to do it again
             System.out.println("\n\nWilt u nog een keer een getal tussen de 0 en de 10 laten uitschrijven?\n1.Ja 2.Nee");
             do {
                 try {

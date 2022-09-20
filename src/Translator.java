@@ -3,7 +3,7 @@ import java.util.*;
 public class Translator {
 
     private Map<Integer, String> numberToAlfabetic = new HashMap<>();
-    private String placeholderString;
+//    private String placeholderString; //Is needed for the complicated method
 
     public Translator(List numberList, String[] alfabeticNumber) {
 
@@ -14,17 +14,20 @@ public class Translator {
     }
 
     public String translate(Integer userNumber) {
-        Iterator<Map.Entry<Integer, String>> iterator = numberToAlfabetic.entrySet().iterator();
 
+        //very complicated method to get the result. This was my first try.
+//        Iterator<Map.Entry<Integer, String>> iterator = numberToAlfabetic.entrySet().iterator();
+//
+//
+//        while (iterator.hasNext()) {
+//            Map.Entry<Integer, String> result = (Map.Entry<Integer, String>) iterator.next();
+//            if (result.getKey().equals(userNumber)) {
+//                placeholderString = result.getValue();
+//                break;
+//            }
+//
+//        }
 
-        while (iterator.hasNext()) {
-            Map.Entry<Integer, String> result = (Map.Entry<Integer, String>) iterator.next();
-            if (result.getKey().equals(userNumber)) {
-                placeholderString = result.getValue();
-                break;
-            }
-
-        }
-        return placeholderString;
+        return numberToAlfabetic.get(userNumber);
     }
 }
